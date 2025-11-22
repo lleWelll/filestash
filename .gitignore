@@ -20,7 +20,7 @@ package-lock.json
 cover.*
 www
 .gitignore
-
+.idea
 
 # frontend
 public/**/*.test.js
