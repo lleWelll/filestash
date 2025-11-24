@@ -19,7 +19,6 @@ RUN apt-get update > /dev/null && \
 
 # STEP3: BUILD PROD IMAGE
 FROM debian:stable-slim
-MAINTAINER mickael@kerjean.me
 WORKDIR /app/
 COPY --from=builder_backend /home/filestash/dist/ .
 RUN apt-get update > /dev/null && \
