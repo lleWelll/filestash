@@ -160,8 +160,7 @@ function componentLeft(render, { $scroll, getSelectionLength$ }) {
             onClick(qs($page, `[data-action="delete"]`)).pipe(rxjs.mergeMap(() => {
                 const path = expandSelection()[0].path;
                 return rxjs.from(componentDelete(
-                    createModal(modalOpt),
-                    basename(path.replace(new RegExp("/$"), "")).substr(0, 15),
+                    createModal(modalOpt)
                 )).pipe(rxjs.mergeMap(() => {
                     const selection = expandSelection()[0].path;
                     clearSelection();
@@ -189,8 +188,7 @@ function componentLeft(render, { $scroll, getSelectionLength$ }) {
             onClick(qs($page, `[data-action="delete"]`)).pipe(rxjs.mergeMap(() => {
                 const paths = expandSelection().map(({ path }) => path);
                 return rxjs.from(componentDelete(
-                    createModal(modalOpt),
-                    "remove",
+                    createModal(modalOpt)
                 )).pipe(rxjs.mergeMap(() => {
                     clearSelection();
                     return rm(...paths);

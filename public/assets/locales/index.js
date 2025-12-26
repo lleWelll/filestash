@@ -21,7 +21,7 @@ export default function t(str = "", replacementString, requestedKey) {
 }
 
 export async function init() {
-    let selectedLanguage = "en";
+    let selectedLanguage = "ru";
     switch (navigator.language) {
     case "zh-TW":
         selectedLanguage = "zh_tw";
